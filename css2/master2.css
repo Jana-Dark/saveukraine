@@ -42,20 +42,10 @@ body {
   100% {background-color:grey;}
 }
 
-
 #main {
-  background:url("../img");
+  background:url("../img/bg.jpg");
   background-size: 1920px 100%;
   background-position:center;
-}
-
-.video {
-position: relative;
-padding-bottom: 56.25%;
-}
-
-.video-media {
-  position: absolute;
 }
 
 #main-container {
