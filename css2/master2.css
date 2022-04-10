@@ -12,11 +12,15 @@ body {
   padding: 0;
   font-family: Monserrat, sans-serif;
 }
+
 .rectangle {
-  width: 100%;
+  width: 1170px;
   height: 150px;
-  background-color:grey;
+  background-color:rgb(90, 90, 90, 80%);
   border-bottom: 5px solid rgb(52, 52, 52);
+  border-right: 5px solid rgb(52, 52, 52);
+  border-left: 5px solid rgb(52, 52, 52);
+  border-radius: 0 0 40px 40px ;
 
   position: absolute;
   top: -150px;
@@ -36,33 +40,47 @@ body {
 }
 
 @keyframes render {
-  0% {background-color:grey;}
-  50% {background-color: rgb(80, 181, 252);
+  0% {background-color: rgb(90, 90, 90, 80%);}
+  50% {background-color: rgb(80, 181, 252, 80%);
   }
-  100% {background-color:grey;}
+  100% {background-color: rgb(90, 90, 90, 80%);}
 }
 
-#main {
-  background:url("../img/bg.jpg");
-  background-size: 1920px 100%;
-  background-position:center;
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
+
+#video {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 #main-container {
   max-width: 1170px;
   margin: 0 auto;
+  z-index: 10;
+  position: relative;
 }
+
 
 #main-header{
   display: flex;
   align-items: center;
   padding-top: 43px;
+
 }
 
 #main-header-logo span {
   font-size: 18px;
   color: #222222;
   margin-left: 10px;
+  text-shadow: 0 0 15px #ffffff;
 
 }
 
@@ -72,6 +90,7 @@ body {
 
 #main-header-menu {
   margin-left: 90px;
+
 }
 
 #main-header-menu a.menu-design {
@@ -82,6 +101,12 @@ body {
   padding: 5px 10px;
   text-decoration: none;
 }
+
+.menu-design {
+  text-shadow: 0 0 15px #ffffff;
+}
+
+
 
 #main-header-menu a.menu-design:hover{
   border-bottom: 2px solid #222222;
@@ -95,6 +120,7 @@ body {
   font-size: 18px;
   color: black;
   margin-right: 5px;
+  text-shadow: 0 0 15px #ffffff;
 }
 
 #main-header-phone span,#main-header-phone img {
@@ -145,6 +171,14 @@ body {
   color: white;
   font-size: 16px;}
 
+#main-container #main-button:hover{
+  border: solid 1px #1895f5;
+  box-shadow:0 0 8px #151515;
+  color: #1895f5;
+}
+
+
+
 .circle {
   width: 150px;
   height: 150px;
@@ -156,21 +190,21 @@ body {
   animation: render1 18s ease-in-out infinite;}
 
 @keyframes render1 {
-  0% {top: -200px; right: -80px;
+  0% {top: -250px; right: -80px;
     background-color:rgb(44, 44, 44);}
 
-  25% {top: -200px; right: -1200px;
+  25% {top: -250px; right: -1200px;
     background-color: rgb(78, 143, 232);
     border-radius: 50%;}
 
   50% {
-    top: -100px;
+    top: -200px;
     right: -1200px;
     background-color: rgb(225, 172, 0);
     border-radius: 100%;}
 
   75% {
-    top: -100px; right: -80px;
+    top: -200px; right: -80px;
     background-color: rgb(131, 185, 255);
     border-radius: 50%;}
 }
@@ -188,6 +222,8 @@ body {
   color: #222222;
 }
 
+
+
 #about{
   margin-top: 160px;
   margin-bottom: 160px;
@@ -195,7 +231,7 @@ body {
 
 #about-container{
   max-width: 1170px;
-margin-left: 250px;
+  margin-left: 250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -206,13 +242,42 @@ margin-left: 250px;
   max-width: 560px;
 
 
-
 }
 #about-header{
   margin-bottom: 40px;
-  color: #222222;
-
 }
+
+.about-box{
+  width: 400px;
+  height: 50px;
+  background-color: #d9d9d9;
+  box-shadow: 0 0 5px #579ad9;
+  padding: 0;
+  overflow: hidden;
+}
+
+#about-container .about-item .about-text-box{
+  color: #1a3142;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+}
+
+@keyframes slide {
+
+  0% {margin-top: 0}
+  25% {margin-top: -50px}
+  50% {margin-top: -100px}
+  75% {margin-top: -50px}
+  100% {margin-top: 0}
+}
+
+#about-container .about-item .about-text-box:first-child {
+  animation: slide 8s infinite;
+}
+
+
+
 
 #about-container .about-item .about-text {
   font-size: 18px;
@@ -241,6 +306,11 @@ margin-left: 250px;
   margin-left: 0;
 }
 
+#services-title:hover {
+  font-size: 31px;
+  text-shadow: 0px 0px 3px #1895f5;
+}
+
 #service-items {
   display: flex;
   flex-wrap: wrap;
@@ -263,6 +333,15 @@ margin-left: 250px;
   align-items: center;
   flex-direction: column;
 }
+
+#service-items .service-items-bg:hover {
+  box-shadow: 0px 0px 5px #525252 inset;
+}
+
+#service-items .service-items:hover {
+  box-shadow: 0px 0px 5px #50b5fc inset;
+}
+
 
 #service-items .service-items-bg {
   background: #d2d5d7;
@@ -306,6 +385,13 @@ margin-left: 250px;
   margin-bottom: 30px;
   text-align: center;
 }
+
+#reserve-title:hover {
+  font-size: 31px;
+  text-shadow: 0px 0px 3px #1895f5;
+}
+
+
 #reserve-description {
   font-size: 14px;
   color: #222222;
@@ -335,6 +421,12 @@ margin-left: 250px;
   margin-left: 1px;
 }
 
+#reserve-container #reserve-forma .button:hover{
+  border: solid 1px #1895f5;
+  box-shadow:0 0 8px #151515;
+  color: #1895f5;
+}
+
 #reserve-forma {
   display: flex;
   justify-content: center;
@@ -354,11 +446,22 @@ margin-left: 250px;
   margin-bottom: 60px;
 }
 
+#foto-title:hover {
+  font-size: 31px;
+  text-shadow: 0px 0px 3px #1895f5;
+}
+
 #foto-images {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+#foto-images .foto-img-hov:hover {
+  box-shadow: 0px 0px 7px #50b5fc;
+}
+
+
 
 #footer {
   background: #555555;
